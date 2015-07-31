@@ -17,12 +17,12 @@ namespace MvcMovie.Controllers
         // GET: Cards
         public ActionResult Index(string cardGenre, string searchString)
         {
-            var GenreList = new List<string>();
-            var GenreQry = from d in db.Cards
+            var CardGenreList = new List<string>();
+            var CardGenreQry = from d in db.Cards
                            orderby d.Genre
                            select d.Genre;
-            GenreList.AddRange(GenreQry.Distinct());
-            ViewBag.cardGenre = new SelectList(GenreList);
+            CardGenreList.AddRange(CardGenreQry.Distinct());
+            ViewBag.cardGenre = new SelectList(CardGenreList);
 
             var cards = from m in db.Cards
                         select m;

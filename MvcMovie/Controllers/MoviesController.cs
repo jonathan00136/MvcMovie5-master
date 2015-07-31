@@ -18,7 +18,7 @@ namespace MvcMovie.Controllers
         public ActionResult Index(string movieGenre, string searchString)
         {
             var GenreLst = new List<string>();
-
+            
             var GenreQry = from d in db.Movies
                            orderby d.Genre
                            select d.Genre;
